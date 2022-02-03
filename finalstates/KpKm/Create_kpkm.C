@@ -23,11 +23,11 @@
   FS->RegisterPreTopoAction(pcorrm); //PRETOPO
 
   ////
-  ParticleCutsManager pcm_dt{"DeltaTimeCuts2",1};
-  pcm_dt.AddParticleCut("e-",new DeltaTimeCut(1));//Apply a Delta Time cut of 1ns
-  pcm_dt.AddParticleCut("K+",new DeltaTimeCut(0.5));//Apply a Delta Time cut of 0.5ns
-  pcm_dt.AddParticleCut("K-",new DeltaTimeCut(0.5));//Apply a Delta Time cut of 0.5ns
-  pcm_dt.AddParticleCut("proton",new DeltaTimeCut(0.5));//Apply a Delta Time cut of 0.5ns
+  ParticleCutsManager pcm_dt{"DeltaTimeVerCuts",1};
+  pcm_dt.AddParticleCut("e-",new DeltaTimeVerCut(1));//Apply a Delta Time cut of 1ns
+  pcm_dt.AddParticleCut("K+",new DeltaTimeVerCut(0.5));//Apply a Delta Time cut of 0.5ns
+  pcm_dt.AddParticleCut("K-",new DeltaTimeVerCut(0.5));//Apply a Delta Time cut of 0.5ns
+  pcm_dt.AddParticleCut("proton",new DeltaTimeVerCut(0.5));//Apply a Delta Time cut of 0.5ns
   FS->RegisterPostTopoAction(pcm_dt);
 
   // Selecting events where both kaons are in the FD
