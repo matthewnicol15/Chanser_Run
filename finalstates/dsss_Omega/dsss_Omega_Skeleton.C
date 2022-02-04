@@ -10,13 +10,13 @@
 
 
   // Define possible detected particles in the final state
-  s.SetFinalStateParts("Electron:e-,Proton:proton,Pim1:pi-,Pim2:pi-,Kaonp1:k+,Kaonp2:k+,Kaonp3:k+");
+  s.SetFinalStateParts("Electron:e-,Kaonp1:K+,Kaonp2:K+,Kaonp3:K+");
 
   // Define possible topologies for this final state
   // ',' separates different topologies
   // ':' separates different particles within a topology
 
-  s.SetFinalStateTopo("Electron:Proton:Kaonp:Kaonp:Kaonp:Pim:Pim");
+  s.SetFinalStateTopo("Electron:Kaonp1:Kaonp2:Kaonp3");
 
   // Define short live parent particles which decay to detected particles
   // Should not include broad resonances, but things like omega, Lambda and K0
@@ -24,7 +24,7 @@
   // ';' separates child particles
   // ',' separates different parents
 
-  s.SetFinalStateParents("Lambda:Lambda0;Proton;Pim1,Omega:Omega-;Proton;Pim1;Pim2");
+  // s.SetFinalStateParents("Lambda:Lambda0;Proton;Pim1,Omega:Omega-;Proton;Pim1;Pim2");
 
   // Produce the code
 
