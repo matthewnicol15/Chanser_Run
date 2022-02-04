@@ -11,10 +11,10 @@
 namespace matthewn{
 
 
-  class Kaon_FD_Cut : public chanser::BaseCut{
+  class FD_Cut : public chanser::BaseCut{
 
   public:
-    Kaon_FD_Cut()=default; // must have default constructor
+    FD_Cut()=default; // must have default constructor
 
 
     Bool_t ParticleCut(const chanser::BaseParticle* part) const noexcept override{
@@ -27,14 +27,14 @@ namespace matthewn{
 
 
     void Print(Option_t* option = "")const final{
-      std::cout<<"\t\t"<<ClassName()<<" with Kaons on FD "<<_cutDetector<<std::endl;
+      std::cout<<"\t\t"<<ClassName()<<" with Kaons on FD "<<std::endl;
     }
 
   private:
     Float_t _cutDetector=chanser::THIS_FLT_MAX;
 
-    ClassDefOverride(matthewn::Kaon_FD_Cut,1);
+    ClassDefOverride(matthewn::FD_Cut,1);
 
-  };//class Kaon_FD_Cut
+  };//class FD_Cut
 
 }
