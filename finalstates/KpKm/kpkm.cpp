@@ -103,28 +103,10 @@ namespace matthewn{
 
     _kinCalc.SetMesonBaryon(invkpkm,_proton.P4());
     _kinCalc.ElectroCMDecay();
-    TD->ProdCosThGJ= _kinCalc.CosTheta();
-    TD->PolPhi= _kinCalc.Phi();
 
     _kinCalc.SetMesonDecay(_kaonp.P4(), _kaonm.P4());
     _kinCalc.MesonDecayGJ();
-    TD->CosTh=_kinCalc.CosTheta();
-    TD->Phi=_kinCalc.Phi();
 
-    TD->proton_theta = _proton.P4().Theta();
-    TD->electron_theta = _electron.P4().Theta();
-    TD->kaonm_theta = _kaonm.P4().Theta();
-    TD->kaonp_theta = _kaonp.P4().Theta();
-
-    TD->proton_Phi = _proton.P4().Phi();
-    TD->electron_Phi = _electron.P4().Phi();
-    TD->kaonm_Phi = _kaonm.P4().Phi();
-    TD->kaonp_Phi = _kaonp.P4().Phi();
-
-    TD->proton_momentum = _proton.P4().P();
-    TD->electron_momentum = _electron.P4().P();
-    TD->kaonm_momentum = _kaonm.P4().P();
-    TD->kaonp_momentum = _kaonp.P4().P();
 
     TD->InvKpKm=invkpkm.M();
     TD->MissMassAll2=missall.M2();
@@ -154,10 +136,10 @@ void kpkm::Kinematics(){
   TD->Pol=_kinCalc.GammaPol();
   TD->Egamma=_kinCalc.GammaE();
 
-  TD->kaonp_delta_time= _kaonp.DeltaTime();
-  TD->kaonm_delta_time= _kaonm.DeltaTime();
-  TD->proton_delta_time= _proton.DeltaTime();
-  TD->electron_delta_time= _electron.DeltaTime();
+  TD->kaonp_delta_time= _kaonp.DeltaTimeVer();
+  TD->kaonm_delta_time= _kaonm.DeltaTimeVer();
+  TD->proton_delta_time= _proton.DeltaTimeVer();
+  TD->electron_delta_time= _electron.DeltaTimeVer();
 
   TD->proton_theta = _proton.P4().Theta();
   TD->electron_theta = _electron.P4().Theta();

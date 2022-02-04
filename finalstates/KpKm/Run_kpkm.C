@@ -6,7 +6,7 @@
   ////Set hipo file to be analysed
   HipoData hdata;
   // HipoTruth hdata;
-  hdata.AddFile("/home/matthewn/links/RGA_Fall_2018_Outbending_dst/rec_clas_005432.evio.01*.hipo");
+  hdata.AddFile("/lustre19/expphy/volatile/clas12/osg2/matthewn/job_4371/output/simu_1/00060.hipo");
   hdata.Reader()->useFTBased(); // Use FTBased PID
 
 
@@ -18,7 +18,7 @@
   ////create FinalStateManager
   ////we can load as many saved final states as we like
   FinalStateManager fsm;
- fsm.SetBaseOutDir("/volatile/clas12/matthewn/Output_RGA_FALL2018_5432_test_030222_04/");
+ fsm.SetBaseOutDir("/volatile/clas12/matthewn/Output_RGA_FALL2018_5432_test_030222_10/");
   ////Connect the data to the manager
   fsm.LoadData(&hdata);
 

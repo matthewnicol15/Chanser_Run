@@ -23,7 +23,7 @@
   FS->RegisterPreTopoAction(pcorrm); //PRETOPO
 
   ////
-  ParticleCutsManager pcm_dt{"DeltaTimeVerCuts",1};
+  ParticleCutsManager pcm_dt{"DeltaTimeVerCut",1};
   pcm_dt.AddParticleCut("e-",new DeltaTimeVerCut(1));//Apply a Delta Time cut of 1ns
   pcm_dt.AddParticleCut("K+",new DeltaTimeVerCut(0.5));//Apply a Delta Time cut of 0.5ns
   pcm_dt.AddParticleCut("K-",new DeltaTimeVerCut(0.5));//Apply a Delta Time cut of 0.5ns
@@ -31,15 +31,15 @@
   FS->RegisterPostTopoAction(pcm_dt);
 
   // Selecting events where both kaons are in the FD
-  ParticleCutsManager pcm_Kaon_FD{"Kaon_FD_Cut",1};
-  pcm_Kaon_FD.AddParticleCut("K+",new Kaon_FD_Cut()); // Just apply to K+
-  pcm_Kaon_FD.AddParticleCut("K-",new Kaon_FD_Cut()); // Just apply to K+
-  FS->RegisterPostTopoAction(pcm_Kaon_FD);
+  ParticleCutsManager pcm_FD{"FD_Cut",1};
+  pcm_FD.AddParticleCut("K+",new FD_Cut()); // Just apply to K+
+  pcm_FD.AddParticleCut("K-",new FD_Cut()); // Just apply to K+
+  FS->RegisterPostTopoAction(pcm_FD);
 
-  // Selecting events where the electron is in the FT
-  ParticleCutsManager pcm_Electron_FT{"Electron_FT_Cut",1};
-  pcm_Kaon_FD.AddParticleCut("e-",new Electron_FT_Cut()); // Just apply to e-
-  FS->RegisterPostTopoAction(pcm_Electron_FT);
+  // Selecting events where these particles are in the FT
+  ParticleCutsManager pcm_FT{"FT_Cut",1};
+  pcm_FT.AddParticleCut("e-",new FT_Cut()); // Just apply to e-
+  FS->RegisterPostTopoAction(pcm_FT);
 
   ///StartTime
   StartTimeAction st("EBStartTime",new C12StartTimeFromVtFTB());
