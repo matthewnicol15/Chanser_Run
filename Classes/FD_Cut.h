@@ -27,7 +27,7 @@ namespace matthewn{
 
 
     void Print(Option_t* option = "")const final{
-      std::cout<<"\t\t"<<ClassName()<<" with Kaons on FD "<<std::endl;
+      std::cout<<"\t\t"<<ClassName()<<" particles on FD "<<std::endl;
     }
 
   private:

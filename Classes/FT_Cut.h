@@ -27,7 +27,7 @@ namespace matthewn{
 
 
     void Print(Option_t* option = "")const final{
-      std::cout<<"\t\t"<<ClassName()<<" with electron on FT "<<std::endl;
+      std::cout<<"\t\t"<<ClassName()<<" with particles on FT "<<std::endl;
     }
 
   private:
