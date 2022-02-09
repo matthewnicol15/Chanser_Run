@@ -43,8 +43,6 @@ namespace matthewn{
       HSLorentzVector missall= _beam + _target - _electron.P4() - _proton.P4()
       -_kaonp.P4()-_kaonm.P4();
 
-      // Putting loose cut on exclusivity to reduce file size
-      // if(fabs(missall.M2())<0.2){
         HSLorentzVector invkpkm = _kaonp.P4() + _kaonm.P4();
 
 
@@ -75,7 +73,9 @@ namespace matthewn{
         TD->MissMassRes=missres.M();
         TD->MomentumExchange=momentum_exchange.M2();
 
-      // }
+        // Putting loose cut on exclusivity to reduce file size
+             if(fabs(missall.M2()) > 0.5) return RejectEvent(); //will not process Kinematics
+
       ///////------------------------------------///////
     };
 

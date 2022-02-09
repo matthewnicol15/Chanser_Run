@@ -37,6 +37,9 @@ namespace matthewn{
 
       TD->Miss3K=miss3K.M();
 
+
+      // Putting loose cut on exclusivity to reduce file size
+           if(miss3K.M() < -0.5) return RejectEvent(); //will not process Kinematics
       ///////------------------------------------///////
     };
 
