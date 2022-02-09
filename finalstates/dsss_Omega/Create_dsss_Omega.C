@@ -21,10 +21,10 @@
   // FS->RegisterPostTopoAction(pcm);
 
   // Perform cuts on delta time of all detected particles
-  ParticleCutsManager pcm_dt{"DeltaTimeVerCut",1};
-  pcm_dt.AddParticleCut("e-",new DeltaTimeVerCut(1));//Apply a Delta Time cut of 1ns
-  pcm_dt.AddParticleCut("K+",new DeltaTimeVerCut(0.5));//Apply a Delta Time cut of 0.5ns
-  FS->RegisterPostTopoAction(pcm_dt);
+  // ParticleCutsManager pcm_dt{"DeltaTimeVerCut",1};
+  // pcm_dt.AddParticleCut("e-",new DeltaTimeVerCut(1));//Apply a Delta Time cut of 1ns
+  // pcm_dt.AddParticleCut("K+",new DeltaTimeVerCut(0.1));//Apply a Delta Time cut of 0.5ns
+  // FS->RegisterPostTopoAction(pcm_dt);
 
   // Selecting events where these particles are in the FD
   ParticleCutsManager pcm_FD{"FD_Cut",1};
@@ -32,12 +32,12 @@
   FS->RegisterPostTopoAction(pcm_FD);
 
   ///StartTime
-  StartTimeAction st("EBStartTime",new C12StartTimeFromVt()); // Using EB start time
-  // StartTimeAction st("StartTime",new C12StartTimeFromParticle("Electron"));
+  // StartTimeAction st("EBStartTime",new C12StartTimeFromVt()); // Using EB start time
+  StartTimeAction st("StartTime",new C12StartTimeFromParticle("Electron"));
   FS->RegisterPreTopoAction(st);  //PRETOPO
 
   ////Write to file for later processing
-  FS->WriteToFile("Configurations/ALLALL_Delta_Time_EB_Start_Time_ElectronFD_3Kp.root");
+  FS->WriteToFile("Configurations/ALLALL_electron_Start_Time_ElectronFD_3Kp.root");
 
   FS->Print();
 
