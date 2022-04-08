@@ -1,1 +1,2 @@
-kpkm $CHANSER/finalstates_Matt/KpKm/Configurations/ALLALL_Delta_Time_Cut_EB_starttime_Electron_Energy_And_Vertex_Correction_ElectronFT_KaonsFD_03022022.root
+kpkm $CHANSER_RUN/finalstates/KpKm/Configurations/ALLALL_Elec_Start_Time_ElecFT_PKpKm.root
+kpkm $CHANSER_RUN/finalstates/KpKm/Configurations/ALL_OneElec_Elec_Start_Time_ElecFT_PKpKm.root

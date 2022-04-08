@@ -17,7 +17,7 @@
   // ':' separates different particles within a topology
   // Here are 3 topologies, exclusive, missing pion and missing proton
 
-  s.SetFinalStateTopo("Electron:Proton:Kaonp:Kaonm");
+  s.SetFinalStateTopo("Electron:Proton:Kaonp:Kaonm,Electron:Kaonp:Kaonm,Electron:Proton:Kaonp,Electron:Proton:Kaonm");
 
   // Define short live parent particles which decay to detected particles
   // Should not include broad resonances, but things like omega, Lambda and K0

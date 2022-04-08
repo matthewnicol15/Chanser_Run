@@ -25,6 +25,11 @@ namespace matthewn{
     Double_t proton_momentum=0, electron_momentum=0, kaonm_momentum=0, kaonp_momentum=0;
     Double_t proton_Phi=0, electron_Phi=0, kaonm_Phi=0, kaonp_Phi=0;
     Double_t kaonp_delta_time=0, kaonm_delta_time=0, proton_delta_time=0, electron_delta_time=0;
+    Double_t kaonp_beta=0, kaonm_beta=0, proton_beta=0, electron_beta=0;
+    Double_t kaonp_mass=0, kaonm_mass=0, proton_mass=0, electron_mass=0;
+    Double_t t_momentum=0;
+    Double_t test_miss=0;
+    Double_t MesonExTrig=0;
 
     //example of e- kinematics
     //you can remove these if not using

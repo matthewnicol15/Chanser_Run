@@ -42,6 +42,15 @@ namespace matthewn{
 
     BaseOutEvent* GetOutEvent() noexcept final{return TD;}
 
+    void DerivedChangeRun() final {
+      //If databases are implemented you can
+      //set the beam energy here
+      auto ebeam=GetRunInfo()->_BeamEnergy;
+      auto mele = 0.00051099891;
+      std::cout<<"Change beam energy to :"<<ebeam<<std::endl;
+      _beam.SetXYZT(0,0,ebeam,TMath::Sqrt(ebeam*ebeam + mele*mele));
+
+    }
   protected :
     void Kinematics() final;
     void UserProcess() final;
@@ -72,8 +81,7 @@ namespace matthewn{
     //Initial state
     HSLorentzVector _beam{0,0,10.6,10.6};//!
     HSLorentzVector _target{0,0,0,0.938272};//!
-    HSLorentzVector _fake_pip{0,0,0,0};
-    HSLorentzVector _fake_pim{0,0,0,0};
+
 
     //Tree Output Data
     TreeDatakpkm* TD{nullptr};//!;

@@ -1,10 +1,14 @@
 {
-  auto FS = matthewn::kpkm::Make("ALL","ALL");
+   auto useEBPidFor = "ALL"; //or "NONE"
+   // auto useInclusiveFilterFor = "ALL";
+   auto useInclusiveFilterFor = "proton:K+:K-";
+   auto FS = matthewn::kpkm::Make(useEBPidFor,useInclusiveFilterFor);
+
   // auto FS = matthewn::kpkm::Make("ALL","ALL");
   FS->AddTopology("Electron:Proton:Kaonp:Kaonm");
   // FS->AddTopology("Electron:Proton:Kaonp");
   // FS->AddTopology("Electron:Proton:Kaonm");
-  // FS->AddTopology("Electron:Kaonp:Kaonm");
+  FS->AddTopology("Electron:Kaonp:Kaonm");
   // FS->AddTopology(OTHER_TOPOLOGY);
 
   ////Save TreeDatakpkm
@@ -44,13 +48,13 @@
   FS->RegisterPostTopoAction(pcm_FD);
 
   // Selecting events where these particles are in the FT
-  ParticleCutsManager pcm_FT{"FT_Cut",1};
-  pcm_FT.AddParticleCut("e-",new FT_Cut()); // Just apply to e-
+  ParticleCutsManager pcm_FT{"FT_Cutter",1};
+  pcm_FT.AddParticleCut("e-",new FT_Cutter()); // Just apply to e-
   FS->RegisterPostTopoAction(pcm_FT);
 
 
   ////Write to file for later processing
-  FS->WriteToFile("Configurations/ALLALL_Elec_Start_Time_ElecFT_PKpKm.root");
+  FS->WriteToFile("Configurations/ALL_OneElec_Elec_Start_Time_ElecFT_PKpKm.root");
 
   FS->Print();
 
