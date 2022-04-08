@@ -1,0 +1,1 @@
+Scaling_Strangeness $CHANSER_RUN/finalstates/Scaling_Strangeness/Configurations/ALLNONE_electron_Start_Time_ElectronKaonpFD_Strangeness.root
