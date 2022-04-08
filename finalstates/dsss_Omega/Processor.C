@@ -5,8 +5,8 @@
 
   clas12root::HipoChain chain;
 
-  chain.Add("/home/matthewn/links/RGA_Fall_2018_Outbending_dst/*.hipo");
-  //  chain.Add("/cache/clas12/rg-a/production/recon/fall2018/torus+1/pass1/v0/dst/recon/005423/rec_clas_005423.evio.*.hipo");
+  // chain.Add("/home/matthewn/links/RGA_Fall_2018_Outbending_dst/*.hipo");
+   chain.Add("/cache/clas12/rg-a/production/recon/fall2018/torus+1/pass1/v1/dst/train/eK+/*.hipo");
   // for(int i=0;i<100;i++)
     // chain.Add(Form("/work/clas12/dglazier/simulation/p3pi/output/simu_%d/dst.hipo",i));
 
@@ -15,7 +15,7 @@
 
   //  chanser::HipoProcessor processor(&chain,"finalstate.txt","/work/clas12/dglazier/chanser_out");
   //  chanser::HipoProcessor processor(&chain,"finalstate.txt","/scratch/dglazier/chanser_out");
-  chanser::HipoProcessor processor(&chain,"finalstate.txt","/volatile/clas12/matthewn/Output_RGA_FALL2018_Processor_040222_04");
+  chanser::HipoProcessor processor(&chain,"finalstate.txt","/volatile/clas12/matthewn/dsss_Output_RGA_FALL2018_Outbending_Skim_eKp_080222_01");
 
   // processor.AddOption("HIPOPROCESSOR_MAXPARTICLES","6");
 
